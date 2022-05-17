@@ -1,4 +1,4 @@
-baseURL: 'http://example.org/'
+baseURL: 'https://hugo-blog-85t.pages.dev/'
 languageCode: 'fr-be'
 title: 'My New Hugo Site'
 theme: ["PaperMod", "hugo-notice"]
