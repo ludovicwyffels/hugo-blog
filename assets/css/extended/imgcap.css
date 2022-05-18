@@ -1,0 +1,7 @@
+.caption-text {
+  display: block;
+  text-align: center;
+  color: var(--secondary);
+  font-style: italic;
+  margin: 8px 0 16px;
+}

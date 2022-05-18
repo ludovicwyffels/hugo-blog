@@ -2,3 +2,243 @@ baseURL: 'https://hugo-blog-85t.pages.dev/'
 languageCode: 'fr-be'
 title: 'My New Hugo Site'
 theme: ["PaperMod", "hugo-notice"]
+
+paginate: "8"
+timeout: 600000 # this needs to be long as we converting webp images
+
+enableRobotsTXT: true
+buildDrafts: false
+buildFuture: false
+buildExpired: false
+
+permalinks:
+  posts: "/:year/:month/:day/:title/"
+
+minify:
+  disableXML: true
+  minifyOutput: true
+
+enableEmoji: true
+
+languages:
+  fr:
+    languageName: ":fr:"
+    languageAltTitle: Français
+    weight: 1
+    title: Code avec Ludo
+    taxonomies:
+      category: categories
+      tag: tags
+      series: series
+    profileMode:
+      enabled: false
+      title: Ludovic Wyffels
+      # imageUrl: "#"
+      # imageTitle: my image
+      # imageWidth: 120
+      # imageHeight: 120
+      subtitle: "Développeur JavaScript et DevOps"
+      buttons:
+        - name: Blog
+          url: posts
+        - name: Tags
+          url: tags
+    menu:
+      main:
+        - name: Archive
+          url: archives
+          weight: 5
+        - name: Tags
+          url: tags
+          weight: 10
+        - name: Catégories
+          url: categories
+          weight: 10
+        - name: Série
+          url: series
+          weight: 10
+        - name: Recherche 
+          url: search
+          weight: 10
+  en:
+    languageName: ":gb:"
+    # languageName: "English"
+    languageAltTitle: English
+    weight: 2
+    title: Code with Ludo
+    taxonomies:
+      category: categories
+      tag: tags
+      series: series
+    profileMode:
+      enabled: false
+      title: Ludovic Wyffels
+      # imageUrl: "#"
+      # imageTitle: my image
+      # imageWidth: 120
+      # imageHeight: 120
+      subtitle: "JavaScript developer and DevOps"
+      buttons:
+        - name: Blog
+          url: posts
+        - name: Tags
+          url: tags
+    menu:
+      main:
+        - name: Archive
+          url: archives
+          weight: 5
+        - name: Search
+          url: search/
+          weight: 20
+        - name: Tags
+          url: tags/
+          weight: 10
+        - name: Categories
+          url: categories/
+          weight: 10
+        - name: Series
+          url: series
+          weight: 10
+
+params:
+  env: production # to enable google analytics, opengraph, twitter-cards and schema.
+  title: "Code avec Ludo"
+  description: "Ramblings of a nerd"
+  keywords: ["Blog", "Technical", "Automation", "DevOps", "Cloud"]
+  author: "Ludovic Wyffels"
+  images: ["/images/blog-cover.jpg"]
+  DateFormat: "2 January 2006"
+  defaultTheme: "auto" # dark, light
+  disableThemeToggle: false
+
+  ShowReadingTime: true
+  ShowShareButtons: true
+  displayFullLangName: true
+  ShowPostNavLinks: true
+  ShowBreadCrumbs: false
+  ShowCodeCopyButtons: true
+  disableSpecial1stPost: true
+  disableScrollToTop: false
+  comments: true
+  hidemeta: false
+  hideSummary: false
+  showtoc: false
+  tocopen: false
+
+  assets:
+    disableHLJS: true
+    disableFingerprinting: false
+    favicon: "favicon.ico"
+    favicon16x16: "favicon-16x16.png"
+    favicon32x32: "favicon-32x32.png"
+    apple_touch_icon: "apple-touch-icon.png"
+    safari_pinned_tab: "images/logo.svg"
+
+  label:
+    # text: "Code avec Ludo"
+    # icon: "/images/logo.svg"
+    iconHeight: 40
+    iconWidth: 50
+
+  cover:
+    responsiveImages: true
+    hidden: false # hide everywhere but not in structured data
+    hiddenInList: true # hide on list pages and home
+    hiddenInSingle: false # hide on single page
+    thumbnailInList: true
+
+  editPost:
+    URL: "https://github.com/russmckendrick/blog/tree/main/content/"
+    Text: "Suggest Changes" # edit text
+    appendFilePath: true # to append file path to Edit link
+
+  fuseOpts:
+    isCaseSensitive: false
+    shouldSort: true
+    location: 0
+    distance: 1000
+    threshold: 0.4
+    minMatchCharLength: 0
+    keys: ["title", "summary", "content"]
+
+  # analytics:
+  #   google:
+  #     SiteVerificationTag: "XYZabc"
+  #   bing:
+  #     SiteVerificationTag: "XYZabc"
+
+  socialIcons:
+    - name: twitter
+      url: "https://twitter.com/ludovicwyffels/"
+    - name: linkedin
+      url: "https://www.linkedin.com/in/ludovicwyffels/"
+    - name: github
+      url: "https://github.com/ludovicwyffels"
+    - name: medium
+      url: "https://medium.com/@ludovic.wyffels"
+
+menu:
+  main:
+    - identifier: archives
+      url: /archives/
+      name: Archives
+      weight: 5
+    - identifier: categories
+      url: /categories/
+      name: Categories
+      weight: 10
+    - identifier: search
+      url: /search/
+      name: Search
+      weight: 15
+    - identifier: tags
+      url: /tags/
+      name: Tags
+      weight: 20
+    - identifier: source
+      name: < >
+      url: https://github.com/russmckendrick/blog/
+      weight: 100
+
+outputs:
+  home:
+    - HTML
+    - RSS
+    - JSON # is necessary for the search
+    - _redirects
+
+disableAliases: false
+
+mediaTypes:
+  text/redirects:
+
+outputFormats:
+  _redirect:
+    name: _redirects
+    mediaType: text/redirects
+    baseName: _redirects
+    isPlainText: true
+    rel: alternate
+    isHTML: false
+    noUgly: true
+    permalinkable: false
+
+markup:
+  highlight:
+    anchorLineNos: false
+    codeFences: true
+    guessSyntax: true
+    lineNos: false
+    noClasses: true
+    style: monokai
+
+# googleAnalytics: "UA-43497944-1" # disabled until I can figure out a way of getting the page speed up
+
+privacy:
+  disqus:
+    disable: true
+  googleAnalytics:
+    disable: true
+
+ignoreErrors: ["error-remote-getjson", "error-missing-instagram-accesstoken"]
