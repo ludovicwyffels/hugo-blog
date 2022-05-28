@@ -31,7 +31,7 @@ languages:
       tag: tags
       series: series
     profileMode:
-      enabled: false
+      enabled: true
       title: Ludovic Wyffels
       # imageUrl: "#"
       # imageTitle: my image
@@ -39,27 +39,18 @@ languages:
       # imageHeight: 120
       subtitle: "Développeur JavaScript et DevOps"
       buttons:
-        - name: Blog
-          url: posts
-        - name: Tags
-          url: tags
+        - name: Articles 🇬🇧
+          url: /en/posts
+        - name: Articles 🇫🇷
+          url: /fr/posts
     menu:
       main:
-        - name: Archive
-          url: archives
-          weight: 5
-        - name: Tags
-          url: tags
-          weight: 10
-        - name: Catégories
-          url: categories
-          weight: 10
-        - name: Série
-          url: series
-          weight: 10
         - name: Recherche 
-          url: search
-          weight: 10
+          url: /fr/search
+          weight: 20
+        - name: A propos
+          url: /fr/about
+          weight: 25
   en:
     languageName: ":gb:"
     # languageName: "English"
@@ -71,7 +62,7 @@ languages:
       tag: tags
       series: series
     profileMode:
-      enabled: false
+      enabled: true
       title: Ludovic Wyffels
       # imageUrl: "#"
       # imageTitle: my image
@@ -79,27 +70,18 @@ languages:
       # imageHeight: 120
       subtitle: "JavaScript developer and DevOps"
       buttons:
-        - name: Blog
-          url: posts
-        - name: Tags
-          url: tags
+        - name: Posts 🇬🇧
+          url: /en/posts
+        - name: Posts 🇫🇷
+          url: /fr/posts
     menu:
       main:
-        - name: Archive
-          url: archives
-          weight: 5
         - name: Search
-          url: search/
+          url: /en/search/
           weight: 20
-        - name: Tags
-          url: tags/
-          weight: 10
-        - name: Categories
-          url: categories/
-          weight: 10
-        - name: Series
-          url: series
-          weight: 10
+        - name: About
+          url: /en/about
+          weight: 25
 
 params:
   env: production # to enable google analytics, opengraph, twitter-cards and schema.
@@ -149,8 +131,8 @@ params:
     thumbnailInList: true
 
   editPost:
-    URL: "https://github.com/russmckendrick/blog/tree/main/content/"
-    Text: "Suggest Changes" # edit text
+    URL: "https://github.com/ludovicwyffels/hugo-blog/tree/main/content"
+    # Text: "Suggest Changes" # edit text
     appendFilePath: true # to append file path to Edit link
 
   fuseOpts:
@@ -169,8 +151,8 @@ params:
   #     SiteVerificationTag: "XYZabc"
 
   socialIcons:
-    - name: twitter
-      url: "https://twitter.com/ludovicwyffels/"
+    # - name: twitter
+    #   url: "https://twitter.com/ludovicwyffels/"
     - name: linkedin
       url: "https://www.linkedin.com/in/ludovicwyffels/"
     - name: github
@@ -180,25 +162,13 @@ params:
 
 menu:
   main:
-    - identifier: archives
-      url: /archives/
-      name: Archives
-      weight: 5
-    - identifier: categories
-      url: /categories/
-      name: Categories
-      weight: 10
     - identifier: search
       url: /search/
       name: Search
       weight: 15
-    - identifier: tags
-      url: /tags/
-      name: Tags
-      weight: 20
     - identifier: source
       name: < >
-      url: https://github.com/russmckendrick/blog/
+      url: https://github.com/ludovicwyffels/hugo-blog/
       weight: 100
 
 outputs:
@@ -226,12 +196,20 @@ outputFormats:
 
 markup:
   highlight:
-    anchorLineNos: false
+    anchorLineNos: true
     codeFences: true
-    guessSyntax: true
-    lineNos: false
+    guessSyntax: false
+    hl_Lines: ""
+    lineAnchors: ""
+    lineNoStart: 1
+    lineNos: true
+    lineNumbersInTable: false
+    lineNumbersInLine: true
     noClasses: true
+    noHl: false
     style: monokai
+    tabWidth: 4
+
 
 # googleAnalytics: "UA-43497944-1" # disabled until I can figure out a way of getting the page speed up
 
@@ -239,6 +217,23 @@ privacy:
   disqus:
     disable: true
   googleAnalytics:
+    anonymizeIP: true
     disable: true
+    respectDoNotTrack: true
+    useSessionStorage: true
+  instagram:
+    disable: false
+    simple: false
+  twitter:
+    disable: false
+    enableDNT: true
+    simple: true
+  vimeo:
+    disable: false
+    enableDNT: true
+    simple: true
+  youtube:
+    disable: false
+    privacyEnhanced: true
 
 ignoreErrors: ["error-remote-getjson", "error-missing-instagram-accesstoken"]
