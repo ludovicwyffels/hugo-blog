@@ -5,8 +5,6 @@ url: /fr/about
 draft: false
 ---
 
-<!-- {{< tagcloud >}} -->
-
 Bonjour, je m'appelle Ludovic. 👋
 
 Dans mes 8 années d'expérience en tant que développeur de logiciel, j'ai travaillé pour une startup pendant 2 ans, en tant que développeur mobile. J'ai eu la chance d'expérimenter ce qu'est un MVP puis le réécrire en utilisant les meilleures pratiques du marché tout en ayant à le faire évoluer.
