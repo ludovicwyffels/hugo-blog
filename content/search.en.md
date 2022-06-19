@@ -1,5 +1,6 @@
 ---
 title: "Search"
 layout: "search"
-# url: "/search"
+url: "en/search"
+aliases: ["/search"]
 ---
