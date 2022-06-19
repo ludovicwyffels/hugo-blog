@@ -8,7 +8,7 @@ showToc: true
 cover:
     image: "cover.png"
     relative: true
-    caption: Photos of [<your name>]() on [Unsplash](https://unsplash.com)
+    caption: Photos of [Glenn Carstens-Peters](https://unsplash.com/@glenncarstenspeters) on [Unsplash](https://unsplash.com)
 tags:
   - "post"
 ---
