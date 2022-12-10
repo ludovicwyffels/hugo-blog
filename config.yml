@@ -33,10 +33,10 @@ languages:
     profileMode:
       enabled: true
       title: Ludovic Wyffels
-      # imageUrl: "#"
-      # imageTitle: my image
-      # imageWidth: 120
-      # imageHeight: 120
+      imageUrl: https://avatars.githubusercontent.com/u/7853899?v=4
+      imageTitle: Mon image de profile GitHub
+      imageWidth: 240
+      imageHeight: 240
       subtitle: "Développeur JavaScript et DevOps"
       buttons:
         - name: Articles 🇬🇧
@@ -64,10 +64,10 @@ languages:
     profileMode:
       enabled: true
       title: Ludovic Wyffels
-      # imageUrl: "#"
-      # imageTitle: my image
-      # imageWidth: 120
-      # imageHeight: 120
+      imageUrl: https://avatars.githubusercontent.com/u/7853899?v=4
+      imageTitle: My GitHub profile image
+      imageWidth: 240
+      imageHeight: 240
       subtitle: "JavaScript developer and DevOps"
       buttons:
         - name: Posts 🇬🇧
@@ -195,6 +195,24 @@ outputFormats:
     permalinkable: false
 
 markup:
+  asciidocExt:
+    attributes: {}
+    backend: html5
+    extensions: []
+    failureLevel: fatal
+    noHeaderOrFooter: true
+    preserveTOC: false
+    # safeMode: unsafe
+    sectionNumbers: false
+    trace: false
+    verbose: false
+    workingFolderCurrent: false
+  defaultMarkdownHandler: goldmark
+  goldmark:
+    hardWraps: true
+    renderer:
+      hardWraps: true
+      unsafe: true
   highlight:
     anchorLineNos: true
     codeFences: true
@@ -212,6 +230,7 @@ markup:
 
 
 # googleAnalytics: "UA-43497944-1" # disabled until I can figure out a way of getting the page speed up
+googleAnalytics: G-KQM0RDTC9S
 
 privacy:
   disqus:
@@ -237,3 +256,10 @@ privacy:
     privacyEnhanced: true
 
 ignoreErrors: ["error-remote-getjson", "error-missing-instagram-accesstoken"]
+
+module:
+  import:
+    path: github.com/schnerring/hugo-mod-json-resume
+  mounts:
+    source: node_modules/simple-icons/icons
+    target: assets/simple-icons
